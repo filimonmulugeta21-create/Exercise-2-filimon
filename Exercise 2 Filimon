@@ -1,0 +1,55 @@
+# Simple Unit Converter: Meters <-> Feet
+
+# Function to handle conversion
+def convert_units(value, conversion_type):
+    if conversion_type == "M2F":  # Meters to Feet
+        result = value * 3.28084
+        return result
+    elif conversion_type == "F2M":  # Feet to Meters
+        result = value / 3.28084
+        return result
+    else:
+        return None
+
+# Ask the user for input
+value = float(input("Enter the value you want to convert: "))
+conversion_type = input("Enter conversion type ('M2F' for meters to feet, 'F2M' for feet to meters): ")
+
+# Perform the conversion
+converted_value = convert_units(value, conversion_type)
+
+# Display the result
+if converted_value is not None:
+    print(f"The converted value is: {converted_value}")
+else:
+    print("Invalid conversion type. Please enter 'M2F' or 'F2M'.")
+# Assignment: Tax Calculator
+
+# Function to calculate tax and net income
+def calculate_tax(income):
+    if income <= 2000:
+        tax_rate = 0
+    elif income <= 4000:
+        tax_rate = 0.15
+    elif income <= 7000:
+        tax_rate = 0.20
+    elif income <= 10000:
+        tax_rate = 0.25
+    elif income <= 14000:
+        tax_rate = 0.30
+    else:  # Over 14000
+        tax_rate = 0.35
+
+    tax_owed = income * tax_rate
+    net_income = income - tax_owed
+    return tax_owed, net_income
+
+# Ask the user for income
+income = float(input("Enter your income: "))
+
+# Calculate tax and net income
+tax, net = calculate_tax(income)
+
+# Display the results
+print(f"Total tax owed: ${tax:.2f}")
+print(f"Net income after tax: ${net:.2f}")
