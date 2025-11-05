@@ -1,28 +1,19 @@
-# Simple Unit Converter: Meters <-> Feet
+# Simple Program: Convert Meters to Feet
 
-# Function to handle conversion
-def convert_units(value, conversion_type):
-    if conversion_type == "M2F":  # Meters to Feet
-        result = value * 3.28084
-        return result
-    elif conversion_type == "F2M":  # Feet to Meters
-        result = value / 3.28084
-        return result
-    else:
-        return None
+# Define a function for the conversion
+def convert_meters_to_feet(meters):
+    feet = meters * 3.28084
+    return feet
 
 # Ask the user for input
-value = float(input("Enter the value you want to convert: "))
-conversion_type = input("Enter conversion type ('M2F' for meters to feet, 'F2M' for feet to meters): ")
+meters = float(input("Enter distance in meters: "))
 
 # Perform the conversion
-converted_value = convert_units(value, conversion_type)
+feet = convert_meters_to_feet(meters)
 
 # Display the result
-if converted_value is not None:
-    print(f"The converted value is: {converted_value}")
-else:
-    print("Invalid conversion type. Please enter 'M2F' or 'F2M'.")
+print(f"{meters} meters is equal to {feet:.2f} feet.")
+
 # Assignment: Tax Calculator
 
 # Function to calculate tax and net income
